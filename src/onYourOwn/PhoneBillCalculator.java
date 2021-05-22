@@ -22,7 +22,7 @@ public class PhoneBillCalculator {
         billCalculator.calculateTotal();
     }
 
-    void calculateOverage(){
+    public void calculateOverage(){
         System.out.println("What is your base plan cost? ");
         double planFee =  scanner.nextDouble();
         this.planFee = planFee;
@@ -37,13 +37,13 @@ public class PhoneBillCalculator {
         System.out.println("Overage: $" +String.format("%.2f",totalOverageCost ));
 
     }
-    void calculateTax() {
+  public void calculateTax() {
         Double taxTotal = (totalOverageCost + planFee) * tax;
         this.taxTotal = taxTotal;
         System.out.println("Tax: $" + String.format("%.2f", taxTotal));
     }
 
-    void calculateTotal() {
+   public void calculateTotal() {
         double total = planFee + totalOverageCost + taxTotal;
         System.out.println("Total: $" + String.format("%.2f",total));
     }
